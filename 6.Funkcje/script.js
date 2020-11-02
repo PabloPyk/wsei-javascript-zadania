@@ -16,7 +16,7 @@ const showNumbers = function(){
 	console.log(numbers);
 }
 showNumbers();
-
+ 
 //Zadanie 4
 const showString = function(show){
 	counter = 0;
