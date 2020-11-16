@@ -2,6 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\1.Początki",
+    "\\11.DOM-wyszukiwanie",
+    "\\12.DOM-poruszanie",
     "\\3.Operatory",
     "\\4.Pętle i ify",
     "\\5.Funkcje czasu",
@@ -9,6 +11,6 @@
     "\\7. Tablice",
     "\\8.Obiekty"
   ],
-  "SelectedNode": "\\8.Obiekty\\script.js",
+  "SelectedNode": "\\11.DOM-wyszukiwanie\\script.js",
   "PreviewInSolutionExplorer": false
 }
