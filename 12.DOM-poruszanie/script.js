@@ -45,3 +45,35 @@ function changeColor(element){
 buttons.forEach(button => {
   changeColor(button);
 })
+
+//Zadanie 5
+const colors = document.querySelectorAll("#ex5 div");
+const elements = [...document.querySelectorAll('#ex5 li')];
+
+colors.forEach (element => {
+  element.addEventListener('mouseenter', function(colors) {
+    let currentColor = colors.target.style.backgroundColor;
+    //1
+    //elements[0].style.backgroundColor = currentColor;
+
+    //2
+    //elements[elements.length -1].style.backgroundColor = currentColor;
+
+    //4
+    //elements.forEach(element => element.style.backgroundColor = currentColor);
+
+    //5
+    //document.querySelector("#ex5 ul").style.backgroundColor = currentColor;
+  })
+})
+
+
+//Zadanie 6
+const ex6 = document.getElementById("ex6");
+
+const firstCombination = ex6.firstElementChild.firstElementChild.firstElementChild;
+
+const secondCombination = ex6.firstElementChild.parentElement.firstElementChild.firstElementChild.nextElementSibling.parentElement;
+
+const thirdCombination = ex6.parentElement.firstElementChild.parentElement.firstElementChild.nextElementSibling.firstElementChild.firstElementChild.firstElementChild;
+
