@@ -108,5 +108,24 @@ for (let i = 0; i < size; i++){
     console.log(tree);
 }
 
-//d
 //e
+//Star i size zareklarowane w podpunkcie 5
+for (let i = 0; i < size; i++){
+	let tree = '';
+  	for (let j = 0; j < size - i; j++){
+    	tree += ' ';
+    }
+    for (let k = 0; k < i + 1; k++){
+    	tree += star;
+    }
+    console.log(tree);
+}
+
+for (let i = 0; i < 3; i++){
+  var tree = '';
+  for (j = 0; j < 5; j++){
+    tree += ' ';
+  }
+  tree += star;
+  console.log(tree);
+}
