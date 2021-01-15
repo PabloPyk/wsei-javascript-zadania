@@ -47,6 +47,7 @@ square.addEventListener('mouseleave', function(){
 })
 
 //Zadanie 4
+const spanErr = document.querySelector('#ex3-err');
 document.getElementById('input-test').addEventListener('keydown', function(show){
   if(show.keyCode > 47 && show.keyCode <58){
     span.textContent = "Nie mo¿esz wpisywaæ liczb!"
