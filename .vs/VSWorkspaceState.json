@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\12.DOM-poruszanie",
     "\\13.DOM-eventy",
     "\\14.DOM-elementy",
+    "\\15.DOM-Tworzenie elementów",
     "\\3.Operatory",
     "\\4.Pętle i ify",
     "\\5.Funkcje czasu",
@@ -11,6 +11,6 @@
     "\\7. Tablice",
     "\\8.Obiekty"
   ],
-  "SelectedNode": "\\14.DOM-elementy\\script.js",
+  "SelectedNode": "\\14.DOM-elementy\\index.html",
   "PreviewInSolutionExplorer": false
 }
