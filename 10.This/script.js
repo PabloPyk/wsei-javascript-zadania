@@ -67,3 +67,36 @@ console.log(firstNumbers.add());
 console.log(firstNumbers.sub());
 console.log(secondNumbers.add());
 console.log(secondNumbers.div());
+
+  //Zadanie 4
+  function Ladder(ladderHeight) {
+    this.height = ladderHeight;
+    this.currentStep = 0;
+
+    this.goUp = function(ladderSteps) {
+      for (let i = 0; i < ladderSteps; i++) {
+        if (this.currentStep == this.height) {
+          console.log("Nie mo¿esz wyjœc wy¿ej!")
+          return;
+        }
+        this.currentStep++;
+        console.log(`Twój aktualny poziom to ${this.currentStep} na ${this.height}`);
+      }
+    }
+
+    this.goDown = function(ladderSteps) {
+      for (let i = 0; i < ladderSteps; i++) {
+        if (this.currentStep == 0) {
+          console.log("Nie mo¿esz zejœæ ni¿ej!")
+          return;
+        }
+        this.currentStep--; 
+        console.log(`Twój aktualny poziom to ${this.currentStep} na ${this.height}`);
+      }
+    }
+  }
+
+  const ladder1 = new Ladder(8);
+  ladder1.goUp(6);
+  ladder1.goDown(2);
+ 
