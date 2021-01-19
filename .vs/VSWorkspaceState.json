@@ -1,7 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\13.DOM-eventy",
+    "\\10.This",
     "\\14.DOM-elementy",
     "\\15.DOM-Tworzenie elementów",
     "\\3.Operatory",
@@ -11,6 +11,6 @@
     "\\7. Tablice",
     "\\8.Obiekty"
   ],
-  "SelectedNode": "\\14.DOM-elementy\\index.html",
+  "SelectedNode": "\\10.This\\script.js",
   "PreviewInSolutionExplorer": false
 }

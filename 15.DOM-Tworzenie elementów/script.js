@@ -71,3 +71,50 @@ function createHtml(elementsObject){
 
 }
 createHtml(elementsObject);
+
+//Zadanie 7
+const firstList = document.createElement('ul');
+firstList.classList.add('firstList');
+firstList.textContent = 'Zadania do wykonania:';
+const secondList = document.createElement('ul');
+secondList.classList.add('secondList');
+secondList.textContent = 'Zadania wykonane:';
+
+for(let i = 1; i<8; i++) {
+    const liElement = document.createElement('li');
+    liElement.textContent = "Zadanie " + i;
+    firstList.appendChild(liElement);
+}
+
+const firstListButton = document.createElement('button');
+firstListButton.textContent = 'Przenieœ element';
+const secondListButton = document.createElement('button');
+secondListButton.textContent = 'Przenieœ element';
+secondListButton.setAttribute('disabled', true);
+
+function copyEl() {
+    let toClone;
+    if(this.previousElementSibling.classList.contains('firstList')) {
+        toClone = firstList.lastElementChild.cloneNode(true);
+        firstList.lastElementChild.remove();
+        secondList.appendChild(toClone);
+        secondList.nextElementSibling.removeAttribute('disabled');
+    }
+    else {
+        toClone = secondList.lastElementChild.cloneNode(true);
+        secondList.lastElementChild.remove();
+        firstList.appendChild(toClone);
+        firstList.nextElementSibling.removeAttribute('disabled');
+    }
+    if(this.previousElementSibling.children.length == 0) {
+        this.setAttribute('disabled', true);
+    }
+}
+
+firstListButton.addEventListener('click', copyEl);
+secondListButton.addEventListener('click', copyEl);
+
+document.body.appendChild(firstList);
+document.body.appendChild(firstListButton);
+document.body.appendChild(secondList);
+document.body.appendChild(secondListButton);
