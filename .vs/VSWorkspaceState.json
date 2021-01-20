@@ -1,7 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\10.This",
     "\\14.DOM-elementy",
     "\\15.DOM-Tworzenie elementów",
     "\\3.Operatory",
@@ -9,8 +8,9 @@
     "\\5.Funkcje czasu",
     "\\6.Funkcje",
     "\\7. Tablice",
-    "\\8.Obiekty"
+    "\\8.Obiekty",
+    "\\9.Konstruktory i prototype"
   ],
-  "SelectedNode": "\\10.This\\script.js",
+  "SelectedNode": "\\15.DOM-Tworzenie elementów\\script.js",
   "PreviewInSolutionExplorer": false
 }

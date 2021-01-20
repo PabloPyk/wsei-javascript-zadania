@@ -118,3 +118,172 @@ document.body.appendChild(firstList);
 document.body.appendChild(firstListButton);
 document.body.appendChild(secondList);
 document.body.appendChild(secondListButton);
+
+  // Zadanie 8.
+  function createLabel(labelString) {
+    let label = document.createElement('label');
+    label.innerHTML = labelString;
+
+    return label;
+  }
+
+  let result = document.createElement('div');
+  result.id = "result"
+  let form = document.createElement('form');
+  let element = document.createElement('input');
+  element.id = "element";
+  let color = document.createElement('input');
+  color.id = "color";
+  let text = document.createElement('input');
+  text.id = "text";
+  let howMany = document.createElement('input');
+  howMany.id = "how-many";
+  let submit = document.createElement('button');
+  submit.innerText = "Utwórz";
+  submit.type = "submit";
+  submit.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    for (let i = 0; i < parseInt(howMany.value); i++) {
+      let newElement = document.createElement(`${element.value}`);
+      newElement.style.color = `${color.value}`;
+      newElement.innerText = text.value;
+
+      root.appendChild(newElement);
+    }
+  });
+
+  form.appendChild(createLabel('Element</br>'));
+  form.appendChild(element);
+  form.appendChild(createLabel('</br>'))
+  form.appendChild(createLabel('Kolor w HEX</br>'));
+  form.appendChild(color);
+  form.appendChild(createLabel('</br>'))
+  form.appendChild(createLabel('Tekst</br>'));
+  form.appendChild(text);
+  form.appendChild(createLabel('</br>'))
+  form.appendChild(createLabel('Iloœæ</br>'));
+  form.appendChild(howMany);
+  form.appendChild(createLabel('</br></br>'))
+  form.appendChild(submit);
+
+  root.appendChild(form);
+  root.appendChild(result);
+
+  // Zadanie 11
+  function numbers(text) {
+    const reg = /\d/g;
+    const match = text.match(reg);
+    let sum = 0;
+    let ratio = 1;
+    match.forEach(num => {
+      sum += parseInt(num);
+      ratio *= parseInt(num);
+    })
+    console.log(`Suma liczb : ${sum}`);
+    for (let i = 0; i < ratio; i++) {
+      const newDiv = document.createElement('div');
+      newDiv.textContent = text;
+      document.body.appendChild(newDiv);
+    }
+  }
+
+  numbers('1 miejsce w wyœcigu F1');
+
+  // Zadanie 12
+  const textString = "Ala ma kota a kot ma Ale".toLowerCase();
+  const ala = "Ala".toLowerCase();
+  const ola = "Ola".toLowerCase();
+  const notFound = `S³owo ${ala} nie wystepuje w tekscie`;
+
+  function checkText(str) {
+
+    const strObj = {
+      txt: str,
+      checkStr: function() {
+        if (this.txt.includes(ala)) console.log(replaceString(ala, ola, strObj.txt));
+        else {
+          const div = document.createElement('div');
+          div.textContent = notFound;
+          root.appendChild(div);
+        }
+      }
+    }
+    strObj.checkStr();
+  }
+
+  function replaceString(oldS, newS, text) {
+    for (var i = 0; i < text.length; i++) {
+      if (text.substring(i, i + oldS.length) == oldS)
+        text = text.substring(0, i) + newS + text.substring(i + oldS.length, text.length);
+    }
+    return text;
+  }
+
+  checkText(textString);
+
+  // Zadanie 13
+  function stringsLength(elements) {
+    const result = [];
+
+    elements.forEach((element) => {
+      result.push(element.replace(/[^A-Z|a-z]/g, '').split('').length);
+    })
+
+    return result;
+  }
+
+  const lengthStrings = stringsLength(['jakis', 'string']);
+
+  console.log(lengthStrings);
+
+  function getSumFromArray(array) {
+    return array.reduce((a, b) => (a + b));
+  }
+
+  const sumLengthStrings = getSumFromArray(lengthStrings);
+  console.log("Suma: " + sumLengthStrings);
+
+  function getAvgFromArray(sum, array) {
+    return sum / array.length;
+  }
+
+  const avgLengthStrings = getAvgFromArray(sumLengthStrings, lengthStrings);
+  console.log("Œrednia: " + avgLengthStrings);
+
+  // Zadanie 14
+  function createObject() {
+    return {
+      name: '',
+      surname: '',
+      age: '',
+    };
+  }
+
+  let person = createObject();
+
+  function setValues(name, surname, age) {
+    person.name = name;
+    person.surname = surname;
+    person.age = age;
+
+    person.nameLength = name.length;
+    person.surnameLength = surname.length;
+    person.ageLength = age.length;
+
+    if (person.nameLength > 5 || person.surnameLength > 5 || person.age > 5) {
+      const defaultObjectBtn = document.createElement('button');
+      defaultObjectBtn.innerText = 'Przywróc obiekt';
+      document.body.append(defaultObjectBtn, document.getElementById('root'));
+
+      defaultObjectBtn.addEventListener('click', () => {
+        person = createObject();
+
+        console.log(person);
+      })
+    }
+
+    console.log(person);
+  }
+
+  setValues('Mateusz', 'Sznober', 21);
